@@ -1,0 +1,17 @@
+{
+    "database": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "proyek2"
+
+    },
+    "app": {
+        "port": 3000
+    }, 
+    "jwtsecret": "36773979244226452948404D635166546A576E5A7234753778214125432A462D",
+    "nexmo": {
+        "key" : "4be57d3c",
+        "secret" : "YOWzChsAHVCQfbI1"
+    }
+}
