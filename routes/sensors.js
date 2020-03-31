@@ -9,5 +9,6 @@ router.get('/show/:id', sensorController.show);
 router.post('/create', uploadMiddleware.single('foto'), sensorController.create);
 router.post('/update/:id', uploadMiddleware.single('foto'), sensorController.update);
 router.delete('/delete/:id', sensorController.delete);
+router.get('/foto/:foto', sensorController.getFoto);
 
 module.exports = router;

@@ -1,6 +1,7 @@
 // set config folder
 process.env['NODE_CONFIG_DIR'] = __dirname + '/config';
 
+
 // required package
 var createError = require('http-errors');
 var express = require('express');
@@ -17,6 +18,9 @@ var authRouter = require('./routes/auth');
 var smsRouter = require('./routes/sms');
 
 var app = express();
+
+// set root dor
+global.rootDir = path.resolve(__dirname);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,6 +1,7 @@
 var response = require('./response');
 var sensors = require('../models/sensors');
 var fs = require('fs');
+var path = require('path');
 
 exports.create = function(req,res,next){
     if (req.file) req.body.foto = req.file.filename;
@@ -106,4 +107,18 @@ exports.delete = function(req,res,next){
             }
         }
     });
+};
+
+exports.getFoto = function(req, res, next){
+    var options = {
+        root: path.join(rootDir, 'public/images/sensors'),
+        dotfiles: 'deny',
+        headers: {
+          'x-timestamp': Date.now(),
+          'x-sent': true
+        }
+      }
+    
+    var fileName = req.params.foto
+    res.sendFile(fileName, options);
 };
