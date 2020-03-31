@@ -1,9 +1,9 @@
 var con = require('./connection');
 
 module.exports = function() {
-    var q = "DROP TABLE IF EXISTS users";
+    q = "DROP TABLE IF EXISTS sensors";
     con.query(q, function (err, result) {
         if (err) throw err;
-        console.log("user table dropped");
+        console.log("sensors table dropped");
     });
 }

@@ -9,13 +9,9 @@ module.exports = function() {
     password: database_config.password
   });
   
-  con.connect(function(err) {
-      if (err) throw err;
-      console.log("Connected!");
-      var q = "DROP DATABASE IF EXISTS " + database_config.database;
-      con.query(q, function (err, result) {
-        if (err) throw err;
-        console.log("Database dropped");
-      });
-    });
+  var q = "DROP DATABASE IF EXISTS " + database_config.database;
+  con.query(q, function (err, result) {
+    if (err) throw err;
+    console.log("Database dropped");
+  });
 }
